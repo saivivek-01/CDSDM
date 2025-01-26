@@ -1,0 +1,108 @@
+/* Updated CSS for a tech-savvy aesthetic with responsiveness and dynamic animations */
+
+/* General Reset */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(135deg, #1e1e2f, #2b2b48);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Headings */
+h1 {
+    font-size: 3rem;
+    color: #0ff;
+    text-shadow: 0 4px 20px rgba(0, 255, 255, 0.7);
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate, bounce 2s infinite ease-in-out;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #00e1ff;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #ff0080;
+    transform: scale(1.1);
+}
+
+/* Keyframes for animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #00e1ff, #ff0080);
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 0, 128, 0.5);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(255, 0, 128, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(255, 0, 128, 0.5);
+    }
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #888;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+}

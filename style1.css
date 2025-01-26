@@ -1,0 +1,174 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login container styles */
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    color: #d7a014;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Input field styles */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a3d66;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1c2a4e;
+}
+
+/* Error message styling */
+.error {
+    color: #d9534f;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+
+/* Container class for other pages or sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Message box for success or error notifications */
+.message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #e7f7e7;
+    color: #4c9f4c;
+}
+
+.error {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #fbe3e4;
+    color: #d9534f;
+}
+
+/* Card and form layout styling */
+.container.card {
+    background-color: #cf1515;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 30px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #1a2a6c;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+    color: #444;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus, button:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2a3d66;
+    color: #fff;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
