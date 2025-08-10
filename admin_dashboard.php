@@ -1,11 +1,13 @@
 <?php
 session_start();
-
-// Check if user is logged in as admin
-if ($_SESSION['role'] !== 'admin') {
+// Ensure user is logged in and is admin
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: index.php");
     exit();
 }
+
+// Optional: Get the school associated with this admin
+$school = $_SESSION['school'] ?? 'Unknown School';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +19,6 @@ if ($_SESSION['role'] !== 'admin') {
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +26,7 @@ if ($_SESSION['role'] !== 'admin') {
         }
 
         body {
-            background-image: url('managestudent.jpeg');
+            background-image: url('adminlogin.jpeg');
             background-repeat: no-repeat;
             background-size: 100% 100%;
             font-family: 'Roboto', sans-serif;
@@ -51,12 +52,13 @@ if ($_SESSION['role'] !== 'admin') {
         h1 {
             color: #2a3d66;
             font-size: 2rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+
         }
 
         ul {
@@ -94,6 +96,7 @@ if ($_SESSION['role'] !== 'admin') {
 
     <div class="dashboard-container">
         <h1>Welcome, Admin</h1>
+        <p>School: <strong><?= htmlspecialchars($school) ?></strong></p>
         <p>Use the options below to manage students:</p>
         
         <ul>
@@ -101,6 +104,11 @@ if ($_SESSION['role'] !== 'admin') {
             <li><a href="logout.php" class="logout-btn">Logout</a></li>
         </ul>
     </div>
+    <a href="register_user.php">
+    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Register New User
+    </button>
+</a>
 
 </body>
 </html>
