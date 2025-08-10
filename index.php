@@ -3,85 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centralized Database For Student Details </title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="style1.css">
     <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             background-image: url('index.jpeg');
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-size: 100% 100%;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f7fa;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
+            background-size: cover;
         }
 
-        h1 {
-            color: #2a3d66;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .container {
-            text-align: center;
-            background-color: #fff;
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto;
+            background: rgba(255, 255, 255, 0.9);
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #aaa;
         }
 
-        .btn {
-            background-color: #2a3d66;
-            color: #fff;
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 1.1rem;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+        .error {
+            color: red;
+            margin-bottom: 10px;
         }
 
-        .btn:hover {
-            background-color: #1c2a4e;
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
+        button:hover {
+            background-color: #3367d6;
         }
     </style>
 </head>
 <body>
-    <title> </title>
-    <div class="container">
-        <h1>Welcome to </h1><br>
-        <h1>Centralized Database For Student Details</h1>
-        <a href="login_admin.php" class="btn">Admin Login</a>
-        <a href="login_faculty.php" class="btn">Faculty Login</a>
+
+    <div class="login-container">
+        <h1>Login</h1>
+
+        <!-- Display error message if login fails -->
+        <?php if (isset($_GET['error'])): ?>
+            <div class="error"><?php echo htmlspecialchars($_GET['error']); ?></div>
+        <?php endif; ?>
+
+        <form action="auth.php" method="POST">
+            <label>Username:</label>
+            <input type="text" name="username" placeholder="Username" required>
+
+            <label>Password:</label>
+            <input type="password" name="password1" placeholder="Password" required>
+
+            <label>Role:</label>
+            <select name="role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="faculty">Faculty</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
     </div>
+
 </body>
 </html>
