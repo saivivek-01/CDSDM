@@ -4,6 +4,8 @@
 
 CDSDM is a PHP-based web application designed to simplify and centralize student data management for educational institutions. The project emphasizes **cloud-native deployment**, **vendor-agnostic infrastructure**, and **data security** by leveraging **external managed databases** and modern cloud technologies.
 
+🚀 Live at: https://cdsdm.begetter.me(https://cdsdm.begetter.me)
+
 ---
 
 ## Key Features and Standout Deployment Highlights
